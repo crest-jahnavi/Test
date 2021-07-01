@@ -1,48 +1,32 @@
-**Cofense Triage** is a post email gateway automated phishing analysis solution for SOC and incident response teams. Employees who report emails that have bypassed the email gateway are ingested and analyzed by Cofense Triage, **clustered into similar threats, and prioritized for action**. Cofense Triage filters benign spam-based emails, leaving security teams with **real world phish to remediate from employees who reported**. Cofense Triage's automation leverages integrations with **proprietary Cofense Intelligence curated research** as well as 3rd party sandbox, URL, and threat intelligence integrations. 
+## Flow Diagram
 
-The Cofense Triage content pack integrates with Cortex XSOAR to ingest reported email attributes and operationalize in a playbook. Email attributes such as file payload and malicious links are ingestible into XSOAR as threat indicators. In addition, email reporter details, an email visual, and other related emails similar to the reported threat are searchable via Cofense's API.
+![flow diagram](flow_diagram.png)
 
-##### What does this pack do?
 
-The integration allows Cortex XSOAR to ingest phishing threats from Cofense Triage and run response playbooks based on email attributes.
-- Ingest from Cofense Triage inbox and processed locations.
-- Create security incidents in Cortex XSOAR based on processed location categories, such as crimeware, advanced threats, and credential phishing.
-- Ingest phishing threat indicators based on severity from Cofense Triage - hashes, URLs, domains.
-- View image of reported phish.
-- Identify and respond to employees reporting phish, such as VIPs and other highly-credible reporters.
-- Search reports for presence of threat indicator hashes, URLs, and domains.
 
-Configuration with Cofense Triage allows for continuous API polling for new threats located in the inbox or processed location queues. Analysts can setup playbooks to respond to security incidents created in Cortex XSOAR.
 
-### Playbooks
+## Automation Script
 
-Users would be able to run the playbook in 5.5.0 or higher version as it requires commands to execute the task.
-- Report Categorization - Cofense Triage v3
-- Send Indicators - Cofense Triage v3
-- Cluster Report Categorization - Cofense Triage v3
+Generic script to be used for testing outputs and primary keys of all the commands.
 
-#### Report Categorization - Cofense Triage v3
-Report Categorization playbook investigates reports that are unprocessed or uncategorized on Cofense Triage as incident alerts in XSOAR and categorizes them based on the severity of the incident.
-![Report Categorization - Cofense Triage v3](./doc_files/Report_Categorization_-_Cofense_Triage_v3.png)
+## Script Data
 
-#### Send Indicators - Cofense Triage v3
-Send Indicators playbook is used to create or update threat indicators in Cofense Triage as a result of the analysis.
-![Send Indicators - Cofense Triage v3](./doc_files/Send_Indicators_-_Cofense_Triage_v3.png)
+| **Name** | **Description** |
+| --- | --- |
+| Script Type | python3 |
+| Tags | testing |
 
-#### Cluster Report Categorization - Cofense Triage v3
-Cluster Report Categorization playbook is used to retrieve the reports of specific clusters and perform the categorization of reports.
-![Cluster Report Categorization - Cofense Triage v3](./doc_files/Cluster_Report_Categorization_-_Cofense_Triage_v3.png)
+## Inputs
 
-### Automation Scripts
-- Cofense Triage Report Download Script
-- Cofense Triage Threat Enrichment Script
+| **Argument Name** | **Description** |
+| --- | --- |
+| command | Command to be tested. |
+| arguments | Arguments related to the command |
+| change_context | Whether user wants to change the context data after execution of the command or not. |
+| primary_key | Primary key of the context data. |
+| output_prefix | Output prefix for the context path. |
+| get_context | Can be made to True if user wants to only retrieve the context data. |
 
-#### Cofense Triage Report Download Script
-This automation script helps to download all reports associated with the email address.
-![Cofense Triage Report Download Script](./doc_files/CofenseTriageReportDownloadScript.png)
+## Outputs
 
-#### Cofense Triage Threat Enrichment Script
-This automation script helps to enrich the threat indicator value from Cofense Triage.
-![Cofense Triage Threat Enrichment Script](./doc_files/CofenseTriageThreatEnrichmentScript.png)
-
-_For more information about Cofense Triage and the integration with Cortex XSOAR, please visit: [https://cofense.com/wp-content/uploads/2019/12/Demisto-and-Cofense_Solution-Brief.pdf](https://cofense.com/wp-content/uploads/2019/12/Demisto-and-Cofense_Solution-Brief.pdf) and [https://cofense.com/product-services/cofense-triage/](https://cofense.com/product-services/cofense-triage/)._
+There are no outputs for this script.
