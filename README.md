@@ -2,7 +2,6 @@
 Prepare an automation script, so that in future demisto projects, QA could utilize it and reduce their manual verification of test cases.
 
 Automation script will verify:
-
 - Context CASE with api response, for a particular demisto command.
 - All the negative test cases related to all the commands.
 - Primary context key for all the commands.
